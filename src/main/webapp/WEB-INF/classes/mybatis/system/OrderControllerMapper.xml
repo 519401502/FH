@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OrderControllerMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_ORDERCONTROLLER(
+			ACCOUNT_ID,	
+			PAY_TYPE,	
+			CARRY,	
+			REBATE,	
+			CREATE_DATE,	
+			REMARK,	
+			STATUS,	
+			REFUND_STATUS,	
+			PAY_STATUS,	
+			LOW_STOCKS,	
+			AMOUNT,	
+			AMOUNT_EXCHANGE_SCORE,	
+			FEE,	
+			PTOTAL,	
+			QUANTITY,	
+			UPDATE_AMOUNT,	
+			EXPRESS_CODE,	
+			EXPRESS_NAME,	
+			EXPRESS_NO,	
+			EXPRESS_COMPANY_NAME,	
+			CONFIRM_SEND_PRODUCT_REMARK,	
+			OTHER_REQUIREMENT,	
+			CLOSED_COMMENT,	
+			SCORE,	
+			ORDERCONTROLLER_ID
+		) values (
+			#{ACCOUNT_ID},	
+			#{PAY_TYPE},	
+			#{CARRY},	
+			#{REBATE},	
+			#{CREATE_DATE},	
+			#{REMARK},	
+			#{STATUS},	
+			#{REFUND_STATUS},	
+			#{PAY_STATUS},	
+			#{LOW_STOCKS},	
+			#{AMOUNT},	
+			#{AMOUNT_EXCHANGE_SCORE},	
+			#{FEE},	
+			#{PTOTAL},	
+			#{QUANTITY},	
+			#{UPDATE_AMOUNT},	
+			#{EXPRESS_CODE},	
+			#{EXPRESS_NAME},	
+			#{EXPRESS_NO},	
+			#{EXPRESS_COMPANY_NAME},	
+			#{CONFIRM_SEND_PRODUCT_REMARK},	
+			#{OTHER_REQUIREMENT},	
+			#{CLOSED_COMMENT},	
+			#{SCORE},	
+			#{ORDERCONTROLLER_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_ORDERCONTROLLER
+		where 
+			ORDERCONTROLLER_ID = #{ORDERCONTROLLER_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_ORDERCONTROLLER
+			set 
+				ACCOUNT_ID = #{ACCOUNT_ID},
+				PAY_TYPE = #{PAY_TYPE},
+				CARRY = #{CARRY},
+				REBATE = #{REBATE},
+				CREATE_DATE = #{CREATE_DATE},
+				REMARK = #{REMARK},
+				STATUS = #{STATUS},
+				REFUND_STATUS = #{REFUND_STATUS},
+				PAY_STATUS = #{PAY_STATUS},
+				LOW_STOCKS = #{LOW_STOCKS},
+				AMOUNT = #{AMOUNT},
+				AMOUNT_EXCHANGE_SCORE = #{AMOUNT_EXCHANGE_SCORE},
+				FEE = #{FEE},
+				PTOTAL = #{PTOTAL},
+				QUANTITY = #{QUANTITY},
+				UPDATE_AMOUNT = #{UPDATE_AMOUNT},
+				EXPRESS_CODE = #{EXPRESS_CODE},
+				EXPRESS_NAME = #{EXPRESS_NAME},
+				EXPRESS_NO = #{EXPRESS_NO},
+				EXPRESS_COMPANY_NAME = #{EXPRESS_COMPANY_NAME},
+				CONFIRM_SEND_PRODUCT_REMARK = #{CONFIRM_SEND_PRODUCT_REMARK},
+				OTHER_REQUIREMENT = #{OTHER_REQUIREMENT},
+				CLOSED_COMMENT = #{CLOSED_COMMENT},
+				SCORE = #{SCORE},
+			ORDERCONTROLLER_ID = ORDERCONTROLLER_ID
+			where 
+				ORDERCONTROLLER_ID = #{ORDERCONTROLLER_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			ACCOUNT_ID,	
+			PAY_TYPE,	
+			CARRY,	
+			REBATE,	
+			CREATE_DATE,	
+			REMARK,	
+			STATUS,	
+			REFUND_STATUS,	
+			PAY_STATUS,	
+			LOW_STOCKS,	
+			AMOUNT,	
+			AMOUNT_EXCHANGE_SCORE,	
+			FEE,	
+			PTOTAL,	
+			QUANTITY,	
+			UPDATE_AMOUNT,	
+			EXPRESS_CODE,	
+			EXPRESS_NAME,	
+			EXPRESS_NO,	
+			EXPRESS_COMPANY_NAME,	
+			CONFIRM_SEND_PRODUCT_REMARK,	
+			OTHER_REQUIREMENT,	
+			CLOSED_COMMENT,	
+			SCORE,	
+			ORDERCONTROLLER_ID
+		from 
+			TB_ORDERCONTROLLER
+		where 
+			ORDERCONTROLLER_ID = #{ORDERCONTROLLER_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.ACCOUNT_ID,	
+				a.PAY_TYPE,	
+				a.CARRY,	
+				a.REBATE,	
+				a.CREATE_DATE,	
+				a.REMARK,	
+				a.STATUS,	
+				a.REFUND_STATUS,	
+				a.PAY_STATUS,	
+				a.LOW_STOCKS,	
+				a.AMOUNT,	
+				a.AMOUNT_EXCHANGE_SCORE,	
+				a.FEE,	
+				a.PTOTAL,	
+				a.QUANTITY,	
+				a.UPDATE_AMOUNT,	
+				a.EXPRESS_CODE,	
+				a.EXPRESS_NAME,	
+				a.EXPRESS_NO,	
+				a.EXPRESS_COMPANY_NAME,	
+				a.CONFIRM_SEND_PRODUCT_REMARK,	
+				a.OTHER_REQUIREMENT,	
+				a.CLOSED_COMMENT,	
+				a.SCORE,	
+				a.ORDERCONTROLLER_ID
+		from 
+				TB_ORDERCONTROLLER a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.ACCOUNT_ID,	
+				a.PAY_TYPE,	
+				a.CARRY,	
+				a.REBATE,	
+				a.CREATE_DATE,	
+				a.REMARK,	
+				a.STATUS,	
+				a.REFUND_STATUS,	
+				a.PAY_STATUS,	
+				a.LOW_STOCKS,	
+				a.AMOUNT,	
+				a.AMOUNT_EXCHANGE_SCORE,	
+				a.FEE,	
+				a.PTOTAL,	
+				a.QUANTITY,	
+				a.UPDATE_AMOUNT,	
+				a.EXPRESS_CODE,	
+				a.EXPRESS_NAME,	
+				a.EXPRESS_NO,	
+				a.EXPRESS_COMPANY_NAME,	
+				a.CONFIRM_SEND_PRODUCT_REMARK,	
+				a.OTHER_REQUIREMENT,	
+				a.CLOSED_COMMENT,	
+				a.SCORE,	
+				a.ORDERCONTROLLER_ID
+		from 
+				TB_ORDERCONTROLLER a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_ORDERCONTROLLER
+		where 
+			ORDERCONTROLLER_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

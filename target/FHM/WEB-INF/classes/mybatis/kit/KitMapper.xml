@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="KitMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_KIT(
+			TITLE,	
+			CREATE_TIME,	
+			SRC_PATH,	
+			INTEGRAL,	
+			IS_SHOW,	
+			TYPE1,	
+			TYPE2,	
+			SRC_DESC,	
+			KIT_ID
+		) values (
+			#{TITLE},	
+			#{CREATE_TIME},	
+			#{SRC_PATH},	
+			#{INTEGRAL},	
+			#{IS_SHOW},	
+			#{TYPE1},	
+			#{TYPE2},	
+			#{SRC_DESC},	
+			#{KIT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_KIT
+		where 
+			KIT_ID = #{KIT_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_KIT
+			set 
+				TITLE = #{TITLE},
+				SRC_PATH = #{SRC_PATH},
+				INTEGRAL = #{INTEGRAL},
+				IS_SHOW = #{IS_SHOW},
+				TYPE1 = #{TYPE1},
+				TYPE2 = #{TYPE2},
+				SRC_DESC = #{SRC_DESC},
+			KIT_ID = KIT_ID
+			where 
+				KIT_ID = #{KIT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			TITLE,	
+			CREATE_TIME,	
+			SRC_PATH,	
+			INTEGRAL,	
+			IS_SHOW,	
+			TYPE1,	
+			TYPE2,	
+			SRC_DESC,	
+			KIT_ID
+		from 
+			TB_KIT
+		where 
+			KIT_ID = #{KIT_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.TITLE,	
+				a.CREATE_TIME,	
+				a.SRC_PATH,	
+				a.INTEGRAL,	
+				a.IS_SHOW,	
+				a.TYPE1,	
+				a.TYPE2,	
+				a.SRC_DESC,	
+				a.KIT_ID
+		from 
+				TB_KIT a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.TITLE,	
+				a.CREATE_TIME,	
+				a.SRC_PATH,	
+				a.INTEGRAL,	
+				a.IS_SHOW,	
+				a.TYPE1,	
+				a.TYPE2,	
+				a.SRC_DESC,	
+				a.KIT_ID
+		from 
+				TB_KIT a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_KIT
+		where 
+			KIT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

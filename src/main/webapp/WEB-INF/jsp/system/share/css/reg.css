@@ -1,0 +1,20 @@
+.reg_box{width:96%;height:100%;padding:0 2%;background: #f8f8f8;position: relative;overflow: hidden;}
+
+button{border-radius: 5px;background:#e73838;color: #fff;text-align: center;}
+input{border-bottom: #999 1px solid;height: 30px;line-height: 30px;}
+
+.reg_cl{width: 100%;height: 5%;background: red;}
+.reg_cl img{width: 20px;height: 20px;margin-top: 2%;}
+
+.logo{width: 100%;height: 45%;background: yellow;}
+.log_img{width: 100%;height:80%;position:relative;}
+.img_box{width: 100px;height:100px;border-radius: 50%;background: #fff;position: absolute;left: 50%;top:50%;margin-left: -50px;}
+.img_box img{width: 98%;height: 98%;margin: 1%;border-radius: 50%;}
+.logo p{width: 100%;text-align: center;}
+
+.reg_btn{width: 100%;height: 50%;background: green ;}
+.phone,.ver{width: 90%;margin-left: 5%;display: flex;margin-top: 12px;}
+.ver button{width:30%;margin-left: 5%;}
+.btn{width: 90%;margin-left: 5%;margin-top:12px;text-align: center;height: 30px;}
+
+.hint{position:fixed;width: 40%;height: 30px;left:50%;margin-left: -20%;background: #404040;top:50%;margin-top: -15px;text-align: center;color: #fff;line-height: 30px;border-radius: 5px;display: none;}
